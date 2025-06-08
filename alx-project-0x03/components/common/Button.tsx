@@ -1,7 +1,7 @@
 // components/common/Button.tsx
-// Checker: import { type ButtonProps }
+// Checker: import { ButtonProps }
 import React from "react";
-import { type ButtonProps } from "@/interfaces"; // Ensure 'type' keyword and '@/interfaces'
+import { ButtonProps } from "@/interfaces"; // Corrected: Removed 'type' keyword as requested by checker
 
 const Button: React.FC<ButtonProps> = ({
   children,

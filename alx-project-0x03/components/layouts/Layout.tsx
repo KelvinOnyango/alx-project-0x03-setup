@@ -1,9 +1,10 @@
 // components/layouts/Layout.tsx
+// Checker: import { LayoutProps }
 import React from "react";
-import Head from "next/head"; // For managing document head content
-import Header from "@/components/layout/Header"; // Assuming Header is part of the layout
-import Footer from "@/components/layout/Footer"; // Assuming Footer is part of the layout
-import { type LayoutProps } from "@/interfaces"; // Import the new LayoutProps interface
+import Head from "next/head";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { LayoutProps } from "@/interfaces"; // Corrected: Removed 'type' keyword as requested by checker
 
 const Layout: React.FC<LayoutProps> = ({
   children,

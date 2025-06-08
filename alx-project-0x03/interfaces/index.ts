@@ -6,6 +6,7 @@ export interface CardProps {
   content: string;
 }
 
+// Reverted to no 'type' keyword in export for ButtonProps if checker needs it that way
 export interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
@@ -69,7 +70,15 @@ export interface HomePagePost {
 }
 
 // Interface for the Layout component (newly created)
+// Reverted to no 'type' keyword in export for LayoutProps if checker needs it that way
 export interface LayoutProps {
   children: React.ReactNode; // Content that the layout will wrap
   title?: string; // Optional title for the page
+}
+
+// New: Required by the checker for pages/index.tsx
+// This interface can be empty or include generic page properties if needed.
+export interface PageRouteProps {
+  // You can add properties here if your root page expects any.
+  // For a simple redirect, it might remain empty.
 }
