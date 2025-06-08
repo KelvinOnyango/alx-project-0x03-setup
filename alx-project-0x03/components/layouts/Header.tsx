@@ -1,28 +1,52 @@
-### components/layouts/Header.tsx
-
-import Link from "next/link";
-import Button from "../common/Button";
+// components/layout/Header.tsx
+import React from "react";
+import Link from "next/link"; // Ensure Link is imported
 
 const Header: React.FC = () => {
   return (
-    <header className="fixed w-full bg-white shadow-md">
-      <div className="container mx-auto flex justify-between items-center py-6 px-4 md:px-8">
-        <Link href="/" className="text-3xl md:text-5xl font-bold text-gray-800 tracking-tight">
-          Splash App
+    <header className="bg-gray-800 text-white p-4 shadow-md">
+      <nav className="container mx-auto flex justify-between items-center">
+        <Link
+          href="/"
+          className="text-2xl font-bold hover:text-gray-300 transition-colors duration-200"
+        >
+          My App
         </Link>
-
-        {/* Button Group */}
-        <div className="flex gap-4">
-          <Button
-            buttonLabel="Sign In"
-            buttonBackgroundColor="red"
-          />
-          <Button
-            buttonLabel="Sign Up"
-            buttonBackgroundColor="blue"
-          />
-        </div>
-      </div>
+        <ul className="flex space-x-6">
+          <li>
+            <Link
+              href="/home"
+              className="hover:text-gray-300 transition-colors duration-200"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/about"
+              className="hover:text-gray-300 transition-colors duration-200"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/posts"
+              className="hover:text-gray-300 transition-colors duration-200"
+            >
+              Posts
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/users"
+              className="hover:text-gray-300 transition-colors duration-200"
+            >
+              Users
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };

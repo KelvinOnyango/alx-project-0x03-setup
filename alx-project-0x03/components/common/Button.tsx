@@ -1,28 +1,36 @@
-## components/common/Button.tsx
+// components/common/Button.tsx
+// Checker: import { type ButtonProps }
+import React from "react";
+import { type ButtonProps } from "@/interfaces"; // Ensure 'type' keyword and '@/interfaces'
 
-interface ButtonProps {
-  buttonLabel: string
-  buttonSize?: string
-  buttonBackgroundColor?: 'red' | 'blue' | 'orange' | 'green'
-  action?: () => void
-}
-
-
-const Button = ({ buttonLabel, buttonSize, buttonBackgroundColor, action }: ButtonProps) => {
-
-  const backgroundColorClass = buttonBackgroundColor ? {
-    red: 'bg-red-500',
-    blue: 'bg-blue-500',
-    orange: 'bg-orange-500',
-    green: 'bg-green-500',
-  }[buttonBackgroundColor] : 'bg-slate-500'
-
+const Button: React.FC<ButtonProps> = ({
+  children,
+  onClick,
+  size = "medium",
+  shape = "rounded-md",
+  className = "",
+}) => {
+  let sizeClasses = "";
+  switch (size) {
+    case "small":
+      sizeClasses = "px-3 py-1 text-sm";
+      break;
+    case "medium":
+      sizeClasses = "px-4 py-2 text-base";
+      break;
+    case "large":
+      sizeClasses = "px-6 py-3 text-lg";
+      break;
+  }
 
   return (
-    <button onClick={action} className={`${backgroundColorClass} ${buttonSize} px-6 py-2 text-sm font-semibold rounded-lg hover:${backgroundColorClass}/50 transition duration-300 text-white`}>
-      {buttonLabel}
+    <button
+      onClick={onClick}
+      className={`bg-blue-500 hover:bg-blue-700 text-white font-bold ${sizeClasses} ${shape} focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition ease-in-out duration-150 ${className}`}
+    >
+      {children}
     </button>
-  )
-}
+  );
+};
 
 export default Button;
