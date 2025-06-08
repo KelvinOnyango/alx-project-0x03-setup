@@ -4,7 +4,7 @@ import React from "react";
 import Head from "next/head";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { LayoutProps } from "@/interfaces"; // Corrected: Removed 'type' keyword as requested by checker
+import { LayoutProps } from "@/interface"; // Corrected: Removed 'type' keyword as requested by checker
 
 const Layout: React.FC<LayoutProps> = ({
   children,
