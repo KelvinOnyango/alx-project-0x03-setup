@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/layouts/Layout"; // Consider using Layout if it's the main entry
-
+import { PageRouteProps }
 const RootPage: React.FC = () => {
   const router = useRouter();
 
